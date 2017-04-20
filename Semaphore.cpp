@@ -22,7 +22,8 @@ public:
     count_ = count;
   }
 
-  void P () {
+  void P ()
+  {
     if (count_ < 0) {
       throw std::runtime_error("Semaphore : cannot P a negative-count semaphore.");
     }
@@ -35,7 +36,8 @@ public:
     }
   }
 
-  void V () {
+  void V ()
+  {
     WITH_LOCK(mutex_) {
       count_++;
     }
